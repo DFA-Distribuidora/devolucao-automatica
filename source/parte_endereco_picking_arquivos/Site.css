@@ -1,0 +1,127 @@
+﻿/* Set padding to keep content from hitting the edges */
+.login-placeholder {
+    height: 350px;
+}
+
+.width-230px {
+    width: 230px;
+}
+
+.width-100px {
+    width: 100px;
+}
+
+.margin-top-10px {
+    margin-top: 10px;
+}
+
+.align {
+    font-weight: bold;
+    padding-left: 100px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+.margin-top-20px {
+    margin-top: 15px;
+}
+
+margin-left-10px {
+    float: left;
+}
+
+.text-left {
+    margin-left: 400px;
+}
+
+.font-style {
+    font-family: Euphemia;
+}
+
+.input-validation-error {
+    border-color: red;
+}
+
+.field-validation-error {
+    color: red;
+    font-size: x-small;
+    font-style: normal;
+}
+
+/*#region Tables*/
+.table {
+    margin-bottom: 0px;
+    font-size: x-small;
+}
+
+    .table thead > tr > th {
+        padding: 2px;
+    }
+
+    .table tbody > tr > td {
+        padding: 2px;
+    }
+
+    .table tbody > tr:hover {
+        cursor: pointer;
+        background: #ffff99;
+    }
+/*#endregion*/
+
+.modal-dialog {
+    right: auto;
+    left: auto;
+    width: 80%;
+    height: 500px;
+}
+
+.error {
+    color: red;
+    border-color: red;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 11px;
+}
+
+#page {
+    margin-top: 50px;
+    overflow: hidden;
+    height: 90%;
+}
+
+#main-menu-container {
+    float: left;
+    background-color: #F0F0F0;
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 230px;
+    height: 100%;
+    font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#main-menu-toggle-button {
+    float: left;
+    width: 10px;
+    cursor: pointer;
+}
+
+#main-content {
+    height: 100%;
+    float: none;
+    width: auto;
+    overflow: hidden;
+}
+
+#content_frame {
+    width: 99%;
+    height: 100%;
+    overflow-y: visible;
+}

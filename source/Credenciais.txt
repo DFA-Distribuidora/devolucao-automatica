@@ -1,0 +1,15 @@
+//li[@class='pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight' and 
+contains(text(),*) and
+contains(text(),'.') and
+contains(text(),*) and
+contains(text(),'.') and
+contains(text(),*) and
+contains(text(),'.') and
+contains(text(),'01')
+contains(text(),'.') and
+contains(text(),*)]
+
+Senha: dfa29mh
+Usuario: MH-NOTE
+
+Caminho: smb://mh-note/downloads/

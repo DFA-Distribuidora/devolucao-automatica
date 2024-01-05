@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link href="parte_endereco_picking_arquivos/bootstrap.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/style.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/all.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/primeui-1.1.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/puitheme.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/Site.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/bootstrap.custom.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/font-awesome.min.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/select2.min.css" rel="stylesheet">
+    <link href="parte_endereco_picking_arquivos/wms-production.css" rel="stylesheet">
+
+    <script src="parte_endereco_picking_arquivos/jquery-2.1.3.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery-ui-1.11.4.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.validate.js"></script>
+    <script src="parte_endereco_picking_arquivos/primeui-1.1.js"></script>
+    <script src="parte_endereco_picking_arquivos/modernizr-2.8.3.js"></script>
+    <script src="parte_endereco_picking_arquivos/bootstrap.min.js"></script>
+    <script src="parte_endereco_picking_arquivos/respond.min.js"></script>
+    <script src="parte_endereco_picking_arquivos/jstree.js"></script>
+    <script src="parte_endereco_picking_arquivos/jsrender.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery-ui.unobtrusive.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.inputmask.bundle.js"></script>
+    <script src="parte_endereco_picking_arquivos/resources.strings.js"></script>
+    <script src="parte_endereco_picking_arquivos/form2js.js"></script>
+    <script src="parte_endereco_picking_arquivos/js2form.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.mask.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.mask.min.js"></script>
+    <script src="parte_endereco_picking_arquivos/select2.min.js"></script>
+    <!--Extensions-->
+    <script src="parte_endereco_picking_arquivos/jquery.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.ui.js"></script>
+    <script src="parte_endereco_picking_arquivos/jquery.inputmask.js"></script>
+    <script src="parte_endereco_picking_arquivos/js2form_002.js"></script>
+    <script src="parte_endereco_picking_arquivos/form2js_002.js"></script>
+    <script src="parte_endereco_picking_arquivos/primeui.js"></script>
+    <script src="parte_endereco_picking_arquivos/layout.js"></script>
+
+</head>
+<body style="margin: 3px; overflow-y:auto">
+    <div id="Page">
+    <div class=" panel panel-default">
+        <input id="extendedBlock" hidden="" value="false">
+        <div class="panel-heading">Transferência de Produtos entre Endereços</div>
+        <div class="panel-body">
+            <form id="MovingProduct" novalidate="novalidate">
+                <input id="Address_BlockedAddress" name="Address.BlockedAddress" type="hidden" value="false">
+                <input id="Address_SpecialAddress" name="Address.SpecialAddress" type="hidden" value="false">
+                <input id="Address_Id" name="Address.Id" type="hidden" value="">
+                <input id="Address_FullAddress" name="Address.FullAddress" type="hidden" value="">
+                <input id="Address_AddressType_Id" name="Address.AddressType.Id" type="hidden" value="-28">
+                <input id="Product_Id" name="Product.Id" type="hidden" value="3026">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Código de Barra</label>
+                        <input type="text" id="BarCode" name="BarCode" class="form-control input-sm" autocomplete="off">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Produto</label>
+                        <input class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left valid" id="Product_Name" name="Product.Name" style="width: 100%" type="text" value="11320367-BATON Bastao Choc Leite 32(30x16g)XW" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false" aria-invalid="false"><button type="button" class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span class="pui-button-text">&nbsp;</span></button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <form class="row" id="MovingOriginalAddress">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Endereço de Origem</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddressType_Picking" name="optradio_Original">Picking
+
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddressType_Storage" name="optradio_Original" checked="checked">Armazenagem
+
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4" style="display:none">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddressType_Avaria" name="optradio_Original">Avaria
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddress_Devolution" name="optradio_Original">Devolução
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddress_Blocked" name="optradio_Original">Bloqueados
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="OriginalRadioType" type="radio" id="OriginalAddress_Special" name="optradio_Original">
+                                                Endereços Especiais
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-top: -2%;padding-bottom:15px">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Cod. Endereço</label>
+                                    <input type="text" id="OriginalAddress_Id" name="OriginalAddress.Id" style="width:100%" autocomplete="off" class="form-control input-sm" value="1996">
+                                    <input type="hidden" id="MovingOriginalAddress_Stock_Id" name="Stock.Id" value="115731">
+                                    <input type="hidden" id="MovingOriginalAddress_AddressType_Id" name="OriginalAddress.AddressType.Id">
+                                    <input type="hidden" id="MovingOriginalAddress_BarCode" name="BarCode">
+                                    <input type="hidden" id="MovingOriginalAddress_Product_Id" name="Product.Id">
+                                    <input type="hidden" id="MovingOriginalAddress_Destionation_Id" name="DestinationAddress.Id">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Endereço de Origem</label>
+                                    <input type="text" id="OriginalAddress" name="OriginalAddress.FullAddress" style="width:100%" autocomplete="off" class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false" value="02.01.19.02.001"><button type="button" class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span class="pui-button-text">&nbsp;</span></button>
+                                </div>
+                                <div class="col-md-3">
+                                    <label id="AmmountUnit">Quantidade (CX)</label>
+                                    <input type="text" id="Ammount" name="Ammount" style="width:100%" class="form-control input-sm" autocomplete="off" value="54">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>Data de Validade</label>
+                                    <input type="text" id="ExpirationDate" name="ExpirationDate" readonly="readonly" style="width:100%" class="form-control input-sm" autocomplete="off" value="06/12/2024">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Lote</label>
+                                    <input type="text" id="Lot" name="Lot" readonly="readonly" style="width:100%" class="form-control input-sm" autocomplete="off" value="334012942">
+                                </div>
+                                <div class="col-md-3">
+                                    <label>Peso (Kg)</label>
+                                    <input type="text" id="Weight" name="Weight" readonly="readonly" style="width:100%" class="form-control input-sm" autocomplete="off" value="880.20">
+                                </div>
+                                <input type="text" id="Factor" name="Factor" style="display:none" class="form-control input-sm" autocomplete="off" value="960">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <form class="row" id="MovingDestinationAddress">
+                <div class="col-md-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Endereço de Destino</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="DestionationRadioType" type="radio" id="DestinationAddressType_Picking" name="optradio_Destination" checked="checked">Picking
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="DestionationRadioType" type="radio" id="DestinationAddressType_Storage" name="optradio_Destination">Armazenagem
+                                            </label>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="radio-inline">
+                                                <input class="DestionationRadioType" type="radio" id="DestinationAddressType_SpecialAddress" name="optradio_Destination">Endereços Especiais
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: -2%">
+                                    <div class="col-md-3">
+                                        <label>Cod. Endereço</label>
+                                        <input type="text" id="DestinationAddress_Id" name="DestinationAddress.Id" style="width:100%" class="form-control input-sm" autocomplete="off">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Endereço de Destino</label>
+                                        <input type="text" id="DestinationAddress" name="DestinationAddress.FullAddress" style="width:100%" class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left" autocomplete="off" role="textbox" aria-disabled="false" aria-readonly="false" aria-multiline="false"><button type="button" class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span class="pui-button-text">&nbsp;</span></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Tipo de Picking</label>
+                                        <select id="PickingType" name="PickingType.Id" style="width:100%" class="form-control input-sm">
+                                            <option selected="selected" value="-101">Padrão</option>
+                                            <option value="-102">Flowrack</option>
+                                            <option value="-123">Picking Dinâmico</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="panel-footer">
+            <button id="MovingProduct_Submit" type="button" class="btn btn-xs btn-success btn-default" title="Confirmar">
+                <i class="glyphicon glyphicon-ok"></i>
+            </button>
+            <button id="MovingProduct_Refresh" type="button" class="btn btn-xs btn-danger btn-default" title="Cancelar">
+                <i class="glyphicon glyphicon-remove"></i>
+            </button>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>
+<div id="ConfirmDialog" style="display: none; width: 350px; height: auto;" class="pui-dialog ui-widget ui-widget-content ui-helper-hidden ui-corner-all pui-shadow" role="dialog" aria-labelledby="ConfirmDialog_title" aria-hidden="true"><div class="pui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span id="ConfirmDialog_label" class="pui-dialog-title">Confirmação</span><a class="pui-dialog-titlebar-icon pui-dialog-titlebar-close ui-corner-all" href="#" role="button"><span class="ui-icon ui-icon-close"></span></a></div><div class="pui-dialog-content ui-widget-content" style="height: auto;">
+    Tem certeza que deseja mover?
+</div><div class="pui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button type="button" class="pui-button ui-widget ui-state-default ui-corner-all pui-button-text-icon-left" role="button" aria-disabled="false"><span class="pui-button-icon-left ui-icon ui-icon-check"></span><span class="pui-button-text">Sim</span></button><button type="button" class="pui-button ui-widget ui-state-default ui-corner-all pui-button-text-icon-left" role="button" aria-disabled="false"><span class="pui-button-icon-left ui-icon ui-icon-close"></span><span class="pui-button-text">Não</span></button></div></div>
+<style>
+    .form-control {
+        max-width: 250px !important;
+    }
+</style>
+<script src="parte_endereco_picking_arquivos/ProductTransfer.js"></script>
+
+
+<div title="Carregando..." class="loading-div" style="display: none;"><img src="parte_endereco_picking_arquivos/loading.svg"></div><div title="Carregando..." class="loading-div" style="display: none;"><img src="parte_endereco_picking_arquivos/loading.svg"></div><div class="pui-dialog-docking-zone"></div><div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow" style="height: auto; visibility: visible; width: 250px; z-index: 1014; display: none; top: 234.583px; left: 186.167px;"><ul class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"><li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all"><div><strong>02.01.14.02.001</strong> <i class="fa fa-arrow-circle-o-right"></i> <strong><i>08007B</i></strong><div style="padding-left: 10px;margin-top: -10px;"><br>Tipo.Endereço: Armazenagem<br>Qtd.: 54 (CX)<br>Qtd.Disp.: 54 (CX)<br>Qtd.Bloqueada.: 0 (CX)<br>Validade: 06/12/2024 <br>Lote: 334012941<br>Status:<span class="label label-success">Liberado</span></div></div></li><li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all"><div><strong>02.01.16.02.001</strong> <i class="fa fa-arrow-circle-o-right"></i> <strong><i>08008B</i></strong><div style="padding-left: 10px;margin-top: -10px;"><br>Tipo.Endereço: Armazenagem<br>Qtd.: 54 (CX)<br>Qtd.Disp.: 54 (CX)<br>Qtd.Bloqueada.: 0 (CX)<br>Validade: 06/12/2024 <br>Lote: 334012942<br>Status:<span class="label label-success">Liberado</span></div></div></li><li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight"><div><strong>02.01.19.02.001</strong> <i class="fa fa-arrow-circle-o-right"></i> <strong><i>08015B</i></strong><div style="padding-left: 10px;margin-top: -10px;"><br>Tipo.Endereço: Armazenagem<br>Qtd.: 54 (CX)<br>Qtd.Disp.: 54 (CX)<br>Qtd.Bloqueada.: 0 (CX)<br>Validade: 06/12/2024 <br>Lote: 334012942<br>Status:<span class="label label-success">Liberado</span></div></div></li></ul></div><div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow" style="height: auto; visibility: visible; width: 250px; z-index: 1015; display: block; top: 445.3px; left: 188.667px;"><ul class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"><li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight">02.01.02.01.001 <i class="fa fa-arrow-circle-o-right"></i> <strong><i>08001A</i></strong></li></ul></div><div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow" style="height: auto; visibility: visible; width: 332px; z-index: 1009; display: none; top: 128.783px; left: 23.9167px;"><ul class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset"><li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight">11320367 - BATON Bastao Choc Leite 32(30x16g)XW</li></ul></div><div id="growl" class="pui-growl ui-widget"></div></body></html>

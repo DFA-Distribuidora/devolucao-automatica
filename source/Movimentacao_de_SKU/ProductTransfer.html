@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html style=""
+    class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <link href="ProductTransfer_arquivos/bootstrap.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/style.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/all.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/primeui-1.1.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/puitheme.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/Site.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/bootstrap.custom.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/font-awesome.min.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/select2.min.css" rel="stylesheet">
+    <link href="ProductTransfer_arquivos/wms-production.css" rel="stylesheet">
+
+    <script src="ProductTransfer_arquivos/jquery-2.1.3.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.js"></script>
+    <script src="ProductTransfer_arquivos/jquery-ui-1.11.4.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.validate.js"></script>
+    <script src="ProductTransfer_arquivos/primeui-1.1.js"></script>
+    <script src="ProductTransfer_arquivos/modernizr-2.8.3.js"></script>
+    <script src="ProductTransfer_arquivos/bootstrap.min.js"></script>
+    <script src="ProductTransfer_arquivos/respond.min.js"></script>
+    <script src="ProductTransfer_arquivos/jstree.js"></script>
+    <script src="ProductTransfer_arquivos/jsrender.js"></script>
+    <script src="ProductTransfer_arquivos/jquery-ui.unobtrusive.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.inputmask.bundle.js"></script>
+    <script src="ProductTransfer_arquivos/resources.strings.js"></script>
+    <script src="ProductTransfer_arquivos/form2js.js"></script>
+    <script src="ProductTransfer_arquivos/js2form.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.mask.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.mask.min.js"></script>
+    <script src="ProductTransfer_arquivos/select2.min.js"></script>
+    <!--Extensions-->
+    <script src="ProductTransfer_arquivos/jquery.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.ui.js"></script>
+    <script src="ProductTransfer_arquivos/jquery.inputmask.js"></script>
+    <script src="ProductTransfer_arquivos/js2form_002.js"></script>
+    <script src="ProductTransfer_arquivos/form2js_002.js"></script>
+    <script src="ProductTransfer_arquivos/primeui.js"></script>
+    <script src="ProductTransfer_arquivos/layout.js"></script>
+
+</head>
+
+<body style="margin: 3px; overflow-y:auto">
+    <div id="Page">
+        <div class=" panel panel-default">
+            <input id="extendedBlock" hidden="" value="false">
+            <div class="panel-heading">Transferência de Produtos entre Endereços</div>
+            <div class="panel-body">
+                <form id="MovingProduct" novalidate="novalidate">
+                    <input id="Address_BlockedAddress" name="Address.BlockedAddress" type="hidden" value="false">
+                    <input id="Address_SpecialAddress" name="Address.SpecialAddress" type="hidden" value="false">
+                    <input id="Address_Id" name="Address.Id" type="hidden" value="">
+                    <input id="Address_FullAddress" name="Address.FullAddress" type="hidden" value="03.02.01.01.001">
+                    <input id="Address_AddressType_Id" name="Address.AddressType.Id" type="hidden" value="-108">
+                    <input id="Product_Id" name="Product.Id" type="hidden" value="4075">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label>Código de Barra</label>
+                            <input type="text" id="BarCode" name="BarCode" class="form-control input-sm"
+                                autocomplete="off">
+                        </div>
+                        <div class="col-md-4">
+                            <label>Produto</label>
+                            <input
+                                class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left valid"
+                                id="Product_Name" name="Product.Name" style="width: 100%" type="text"
+                                value="12447205-ALPINO Black Top Choc 4(14x85g) BR" autocomplete="off" role="textbox"
+                                aria-disabled="false" aria-readonly="false" aria-multiline="false"
+                                aria-invalid="false"><button type="button"
+                                class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span
+                                    class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span
+                                    class="pui-button-text">&nbsp;</span></button>
+                        </div>
+                    </div>
+                </form>
+                <br>
+                <form class="row" id="MovingOriginalAddress">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Endereço de Origem</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddressType_Picking"
+                                                        name="optradio_Original">Picking
+
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddressType_Storage"
+                                                        name="optradio_Original">Armazenagem
+
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4" style="display:none">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddressType_Avaria" name="optradio_Original">Avaria
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddress_Devolution" name="optradio_Original"
+                                                        checked="checked">Devolução
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddress_Blocked" name="optradio_Original">Bloqueados
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="OriginalRadioType" type="radio"
+                                                        id="OriginalAddress_Special" name="optradio_Original">
+                                                    Endereços Especiais
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin-top: -2%;padding-bottom:15px">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Cod. Endereço</label>
+                                        <input type="text" id="OriginalAddress_Id" name="OriginalAddress.Id"
+                                            style="width:100%" autocomplete="off" class="form-control input-sm">
+                                        <input type="hidden" id="MovingOriginalAddress_Stock_Id" name="Stock.Id"
+                                            value="89985">
+                                        <input type="hidden" id="MovingOriginalAddress_AddressType_Id"
+                                            name="OriginalAddress.AddressType.Id">
+                                        <input type="hidden" id="MovingOriginalAddress_BarCode" name="BarCode">
+                                        <input type="hidden" id="MovingOriginalAddress_Product_Id" name="Product.Id">
+                                        <input type="hidden" id="MovingOriginalAddress_Destionation_Id"
+                                            name="DestinationAddress.Id">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Endereço de Origem</label>
+                                        <input type="text" id="OriginalAddress" name="OriginalAddress.FullAddress"
+                                            style="width:100%" autocomplete="off"
+                                            class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left"
+                                            role="textbox" aria-disabled="false" aria-readonly="false"
+                                            aria-multiline="false" value="03.02.01.01.001"><button type="button"
+                                            class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span
+                                                class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span
+                                                class="pui-button-text">&nbsp;</span></button>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label id="AmmountUnit">Quantidade (UNI)</label>
+                                        <input type="text" id="Ammount" name="Ammount" style="width:100%"
+                                            class="form-control input-sm" autocomplete="off" value="14">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label>Data de Validade</label>
+                                        <input type="text" id="ExpirationDate" name="ExpirationDate" readonly="readonly"
+                                            style="width:100%" class="form-control input-sm" autocomplete="off"
+                                            value="14/09/2024">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Lote</label>
+                                        <input type="text" id="Lot" name="Lot" readonly="readonly" style="width:100%"
+                                            class="form-control input-sm" autocomplete="off" value="325712943G">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>Peso (Kg)</label>
+                                        <input type="text" id="Weight" name="Weight" readonly="readonly"
+                                            style="width:100%" class="form-control input-sm" autocomplete="off"
+                                            value="-1688.58">
+                                    </div>
+                                    <input type="text" id="Factor" name="Factor" style="display:none"
+                                        class="form-control input-sm" autocomplete="off" value="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <form class="row" id="MovingDestinationAddress">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Endereço de Destino</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="DestionationRadioType" type="radio"
+                                                        id="DestinationAddressType_Picking" name="optradio_Destination"
+                                                        checked="checked">Picking
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="DestionationRadioType" type="radio"
+                                                        id="DestinationAddressType_Storage"
+                                                        name="optradio_Destination">Armazenagem
+                                                </label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="radio-inline">
+                                                    <input class="DestionationRadioType" type="radio"
+                                                        id="DestinationAddressType_SpecialAddress"
+                                                        name="optradio_Destination">Endereços Especiais
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="margin-top: -2%">
+                                        <div class="col-md-3">
+                                            <label>Cod. Endereço</label>
+                                            <input type="text" id="DestinationAddress_Id" name="DestinationAddress.Id"
+                                                style="width:100%" class="form-control input-sm" autocomplete="off"
+                                                value="3454">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label>Endereço de Destino</label>
+                                            <input type="text" id="DestinationAddress"
+                                                name="DestinationAddress.FullAddress" style="width:100%"
+                                                class="form-control input-sm pui-inputtext ui-widget ui-state-default ui-corner-left"
+                                                autocomplete="off" role="textbox" aria-disabled="false"
+                                                aria-readonly="false" aria-multiline="false"
+                                                value="02.02.03.01.006"><button type="button"
+                                                class="pui-button ui-widget ui-state-default ui-corner-right pui-button-icon-only"><span
+                                                    class="pui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span><span
+                                                    class="pui-button-text">&nbsp;</span></button>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label>Tipo de Picking</label>
+                                            <select id="PickingType" name="PickingType.Id" style="width:100%"
+                                                class="form-control input-sm">
+                                                <option selected="selected" value="-101">Padrão</option>
+                                                <option value="-102">Flowrack</option>
+                                                <option value="-123">Picking Dinâmico</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <button id="MovingProduct_Submit" type="button" class="btn btn-xs btn-success btn-default"
+                    title="Confirmar">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </button>
+                <button id="MovingProduct_Refresh" type="button" class="btn btn-xs btn-danger btn-default"
+                    title="Cancelar">
+                    <i class="glyphicon glyphicon-remove"></i>
+                </button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div id="ConfirmDialog" style="display: none; width: 350px; height: auto;"
+        class="pui-dialog ui-widget ui-widget-content ui-helper-hidden ui-corner-all pui-shadow" role="dialog"
+        aria-labelledby="ConfirmDialog_title" aria-hidden="true">
+        <div class="pui-dialog-titlebar ui-widget-header ui-helper-clearfix ui-corner-top"><span
+                id="ConfirmDialog_label" class="pui-dialog-title">Confirmação</span><a
+                class="pui-dialog-titlebar-icon pui-dialog-titlebar-close ui-corner-all" href="#" role="button"><span
+                    class="ui-icon ui-icon-close"></span></a></div>
+        <div class="pui-dialog-content ui-widget-content" style="height: auto;">
+            Tem certeza que deseja mover?
+        </div>
+        <div class="pui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><button type="button"
+                class="pui-button ui-widget ui-state-default ui-corner-all pui-button-text-icon-left" role="button"
+                aria-disabled="false"><span class="pui-button-icon-left ui-icon ui-icon-check"></span><span
+                    class="pui-button-text">Sim</span></button><button type="button"
+                class="pui-button ui-widget ui-state-default ui-corner-all pui-button-text-icon-left" role="button"
+                aria-disabled="false"><span class="pui-button-icon-left ui-icon ui-icon-close"></span><span
+                    class="pui-button-text">Não</span></button></div>
+    </div>
+    <style>
+        .form-control {
+            max-width: 250px !important;
+        }
+    </style>
+    <script src="ProductTransfer_arquivos/ProductTransfer.js"></script>
+
+
+    <div title="Carregando..." class="loading-div" style="display: none;"><img
+            src="ProductTransfer_arquivos/loading.svg"></div>
+    <div title="Carregando..." class="loading-div" style="display: none;"><img
+            src="ProductTransfer_arquivos/loading.svg"></div>
+    <div class="pui-dialog-docking-zone"></div>
+    <div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow"
+        style="height: auto; visibility: visible; width: 250px; z-index: 1006; display: block; top: 234.583px; left: 186.167px;">
+        <ul
+            class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset">
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight">
+                <div><strong>03.02.01.01.001</strong> <i class="fa fa-arrow-circle-o-right"></i>
+                    <strong><i>DEVOLUÇÃO</i></strong>
+                    <div style="padding-left: 10px;margin-top: -10px;">
+                        <br>
+                        Tipo.Endereço: Devolucao
+                        <br>
+                        Qtd.: 14 (UNI)
+                        <br>
+                        Qtd.Disp.: 14 (UNI)
+                        <br>
+                        Qtd.Bloqueada.: 0 (UNI)
+                        <br>
+                        Validade: 14/09/2024
+                        <br>
+                        Lote: 325712943G
+                        <br>
+                        Status:
+                        <span class="label label-success">
+                            Liberado
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div><button tit></button>
+    <div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow"
+        style="height: auto; visibility: visible; width: 250px; z-index: 1004; top: 445.3px; left: 188.667px; display: none;">
+        <ul
+            class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset">
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight">
+                02.02.03.01.006</li>
+        </ul>
+    </div>
+    <div class="pui-autocomplete-panel ui-widget-content ui-corner-all ui-helper-hidden pui-shadow"
+        style="height: auto; visibility: visible; width: 364px; z-index: 1002; display: none; top: 83.0667px; left: 229.633px;">
+        <ul
+            class="pui-autocomplete-items pui-autocomplete-list ui-widget-content ui-widget ui-corner-all ui-helper-reset">
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight">12447205 -
+                ALPINO Black Top Choc 4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12425519 - ALPINO Bombons
+                Sortidos Natal 24x195g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12441799 - ALPINO Choc Dark Milk
+                41% 4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12441836 - ALPINO Choc Dark Milk
+                51% 4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12441842 - ALPINO Choc Dark Milk
+                61% 4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12447219 - ALPINO Choc Extra
+                Cremoso 4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12447195 - ALPINO Choc Gianduia
+                4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12441850 - ALPINO Choc Gold
+                4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12447223 - ALPINO Chocolate
+                4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12448721 - ALPINO Chocolate Leite
+                12(22x25g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12408972 - ALPINO Cookie Gotas
+                Choc 52(3x20g)BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12495822 - ALPINO Cookie Gotas
+                Choc 52x60g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12447216 - ALPINO Nevado Choc
+                4(14x85g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12424986 - ALPINO Ovo de Pascoa
+                15x337g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12495751 - ALPINO Panettone
+                DocedeLeite 18x400g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12492196 - ALPO Adulto Car Frg
+                Cer Veg 10x1kg BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12492194 - ALPO Adulto Car Frg
+                Cer Veg 18kg BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12489996 - ALPO Filhotes
+                CarFrgCerVeg Lei 10x1kg BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12462256 - BATON Tab Baton +
+                Smarties 4(14x90g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12461301 - BATON Tab Choc Crcte
+                4(14x90g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12454893 - BONO Bisc Rech Choc
+                Coberto 36x109g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439803 - BONO Bisc Rech Churros
+                60x126g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12454894 - BONO Bisc Rech Ddl
+                Coberto 36x109g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439521 - BONO Bisc Rech Fininho
+                Choc 44x57g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439788 - BONO Bisc Recheado
+                Chocolate 60x126g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12450737 - BONO Bisc Recheado
+                Chocolate 66x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439820 - BONO Bisc Recheado
+                Limao 60x126g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439813 - BONO Bisc Recheado
+                Morango 60x126g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12497517 - BONO Biscoito Rech
+                Limao Cob 36x109g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439789 - BONO Biscoito Recheado
+                Ddl 60x126g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12409656 - BONO Wafer Alpino
+                48x110g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12463773 - BONO Wafer Limao
+                48x110g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12409925 - BONO Wafer Mrg
+                Sensacao 48x110g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12482821 - CARIBE Candybar
+                6(30x28g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">105637124 - Cbo Pr Ninhoinstpo AS
+                1-4CK</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12439804 - CHEERIOS CerMat
+                12x210g PRBPGrtsTigelaBR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12450340 - CHEERIOS CerMat Maca e
+                Canela 24x210g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12435369 - CHEERIOS HONEY Cer
+                Matinal 24x210g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12448706 - CLASSIC Chocolate
+                Leite 12(22x25g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12424995 - CLASSIC Panettone Zero
+                Acucar 18x400g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12448714 - CRUNCH Chocolate
+                12(22x22,5g) BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405428 - DOG CHOW Adlt Mini Peq
+                Carne 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405471 - DOG CHOW Adlt Mini Peq
+                Frango 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405475 - DOG CHOW Adlt TdTm
+                Carne 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405477 - DOG CHOW Adlt TdTm
+                Cordeiro 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405432 - DOG CHOW Adlt TdTm
+                Frango 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12430698 - DOG CHOW
+                BiscoitosFrangoMedGde 16x500gBR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405473 - DOG CHOW Filh Mini Peq
+                Frango 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405472 - DOG CHOW Filh TdTm
+                Carne 15x100g BR</li>
+            <li class="pui-autocomplete-item pui-autocomplete-list-item ui-corner-all">12405478 - DOG CHOW Filh TdTm
+                Frango 15x100g BR</li>
+        </ul>
+    </div>
+</body>
+
+</html>

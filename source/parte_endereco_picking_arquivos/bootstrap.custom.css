@@ -1,0 +1,90 @@
+﻿body, html {
+    height:100%;
+}
+.navbar-inverse {
+    background-color: #313b3f;
+}
+
+.container {
+    float:left;
+    width:70%;
+    padding-top: 15px;
+}
+.navbar-left {
+    float: left;
+    background-color: #ccc;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#navbar-button{
+    float:left;
+}
+
+#navbar-button:hover{
+    cursor: pointer;
+}
+
+.input-small{
+    width: 100px;
+}
+label{
+    display:block;
+}
+.loading-div{
+    position: fixed;
+    bottom:0;
+    right:0;
+}
+
+.form-control {
+    padding: 2px;
+    max-width: 180px;
+    display:inline-block;
+    height: 20px;
+}
+
+hr{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.pui-dialog-content{
+    font-size: x-small;
+}
+
+th, td{
+    font-size: x-small;
+    padding-top: 2px;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+label{
+    margin-top: 8px; 
+    margin-bottom: 2px;
+}
+.btn-report{
+    width: 42px;
+}
+
+select{
+    max-height: 20px;
+    padding:0;
+}
+
+.pui-spinner-input{
+    padding-right: 20px;
+}
+
+.panel-heading {
+    padding: 5px;
+}
+.panel-footer{
+    padding: 5px;
+}
+.panel-body {
+    padding: 5px;
+}
