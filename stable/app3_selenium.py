@@ -9,29 +9,28 @@ from app2_openpyxl import Produtos
 
 
 class Navegador():
-    
     def __init__(self):
         self.linha = 0
-        
+
     def contador(self):
         self.linha = self.linha + 1
-        
+
     def descontador(self):
         self.linha = self.linha - 1
         if self.linha < 0:
             self.linha = 0
-        
+
     def alter_contador(self, num: int):
         self.linha = num
         if self.linha < 0:
             self.linha = 0
-    
+
     def get_contador(self):
         return int(self.linha)
         
     def dados_planilha(self, obj: Produtos):
-        dados = [obj.array_cod_prod, obj.array_lote, obj.array_nome_prod, obj.array_quant_result, obj.tamanho_devolucao]
-        return dados
+        dados = [obj.array_cod_prod, obj.array_lote, obj.array_quant_result, obj.array_nome_prod]
+        return dados, obj.tamanho_devolucao
         
     def carregar_navegador(self):
         self.driver = webdriver.Chrome()
@@ -88,7 +87,7 @@ class Navegador():
                 #---------------------------------------------------------------------------------------------------------
                 try:
                     # Xpath da DIV que contem o lote do produto a ser devolvido
-                    xpath_div_lote = '//div[@style="padding-left: 10px;margin-top: -10px;" and contains(., "Lote: {}")]'.format(array_lote[self.linha])
+                    xpath_div_lote = "//div[@style='padding-left: 10px;margin-top: -10px;' and contains(., 'Lote: {}')]".format(array_lote[self.linha])
                     # WebDriver Wait para esperar aparecer a DIV do produto a ser devolvido
                     WebDriverWait(self.driver, 15).until(
                         EC.presence_of_element_located((By.XPATH, xpath_div_lote))
@@ -131,7 +130,7 @@ class Navegador():
                                 #Clico no terceiro botão dropdown
                                 list_bot_drop[2].click()
                                 # Xpath da DIV que contem o endereço da posicão a ser devolvida
-                                xpath_div_endereco_op = "//li[@class='pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight' and contains(text(),*) and contains(text(),'.') and contains(text(),*) and contains(text(),'.') and contains(text(),*) and contains(text(),'.01.') and contains(text(),*)]"
+                                xpath_div_endereco_op = "//li[@class='pui-autocomplete-item pui-autocomplete-list-item ui-corner-all ui-state-highlight' and  contains(text(),*) and contains(text(),'.') and contains(text(),*) and contains(text(),'.') and contains(text(),'.01.') and contains(text(),*)]"
                                 # WebDriver Wait para esperar aparecer a DIV da posicão a ser devolvida
                                 WebDriverWait(self.driver, 15).until(
                                     EC.presence_of_element_located((By.XPATH, xpath_div_endereco_op))

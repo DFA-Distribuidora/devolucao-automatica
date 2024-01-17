@@ -21,8 +21,11 @@ class Produtos:
             title="Escolha a planilha de devolução",
             filetypes=(('Planilha do Excel', '*.xlsx'), ("all files", '*.*'))
         )
-        self.wb = load_workbook(arquivo)
-        self.ws = self.wb.active
+        if arquivo is not None and arquivo is not '':
+            print ('Nao e none e nao é vazio')
+            self.wb = load_workbook(arquivo)
+            self.ws = self.wb.active
+        return arquivo
     
     def set_codigos_produtos(self):
         #guardar o array de codigos de produtos
@@ -57,12 +60,13 @@ class Produtos:
                 break
             
     def set_tudo(self):
-        self.set_planilha()
-        self.set_tam_dev()
-        self.set_codigos_produtos()
-        self.set_lotes_produtos()
-        self.set_nomes_produtos()
-        self.set_quantidades()
+        arquivo = self.set_planilha()
+        if arquivo is not None and arquivo is not '':
+            self.set_tam_dev()
+            self.set_codigos_produtos()
+            self.set_lotes_produtos()
+            self.set_nomes_produtos()
+            self.set_quantidades()
         
     def enviar_dados(self):
         return self
