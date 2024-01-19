@@ -60,7 +60,7 @@ class Navegador():
             print('Não foi possível inserir o código do produto', e)
         
     
-    def fazer_devolucao(self, array_cod_prod: list,array_lote: list, array_quant_result: list):
+    def fazer_devolucao(self, array_cod_prod: list, array_lote: list, array_quant_result: list):
         try:
             # Localizo o RadioButton de Devolucao ✓
             bot_dev = self.driver.find_element(By.ID, "OriginalAddress_Devolution")
