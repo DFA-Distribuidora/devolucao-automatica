@@ -31,7 +31,7 @@ def mostrar_dados_planilha():
         # Criando uma janela tipo TopLevel para mostrar os itens de devolução
         tp_itens_devolucao = Toplevel()
         tp_itens_devolucao.title("Itens da Devolução")
-        tp_itens_devolucao.geometry("700x600")
+        tp_itens_devolucao.geometry("1000x600")
         # Criando um widget do tipo treeview para mostrar essas devolucoes no toplevel
         
         treeview = Treeview(tp_itens_devolucao ,columns=("linha", "codigo_produto", "lote", 'quantidade', 'nome_produto'), show="headings")
