@@ -5,11 +5,16 @@ from app2_openpyxl import Produtos
 from app3_selenium import Navegador
 
 
+
+
 prod = Produtos()
 nav = Navegador()
 
 def abrir_planilha():
-    prod.set_tudo()
+    try: 
+        prod.set_tudo()
+    except Exception as e:
+        print("Erro: ",e)
 
 
 def mostrarQuantidades():
@@ -54,7 +59,7 @@ def mostrar_dados_planilha():
         #Print os dados no TreeView
         for i in range(0, tamanho):
             cor_fundo = "white" if len(treeview.get_children()) % 2 == 0 else "lightgrey"
-            treeview.insert("", "end", values=(i+1, dados[0][i], dados[1][i], dados[2][i], dados[3][i]), tags=cor_fundo)
+            treeview.insert("", "end", values=(int(i+2), dados[0][i], dados[1][i], dados[2][i], dados[3][i]), tags=cor_fundo)
             treeview.tag_configure("lightgrey", background=cor_fundo)
             # print(cor_fundo)
             # cor_fundo = "white" if len(tree.get_children()) % 2 == 0 else "lightgrey"
