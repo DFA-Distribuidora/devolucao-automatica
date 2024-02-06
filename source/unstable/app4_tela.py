@@ -8,15 +8,17 @@ from app3_selenium import Navegador
 prod = Produtos()
 nav = Navegador()
 
+
 def abrir_planilha():
     prod.set_tudo()
 
-
-def mostrarQuantidades():
-    print(prod.array_quant_result)
-
 def carregar_navegador():
     nav.carregar_navegador()
+
+
+def inserir_codigo():
+    nav.inserir_codigo(prod.array_cod_prod)
+    atualizar_contador()
 
 def fazer_devolucao():
     nav.fazer_devolucao(prod.array_cod_prod,prod.array_lote, prod.array_quant_result)
@@ -31,12 +33,17 @@ def mostrar_dados_planilha():
         # Criando uma janela tipo TopLevel para mostrar os itens de devolução
         tp_itens_devolucao = Toplevel()
         tp_itens_devolucao.title("Itens da Devolução")
-        tp_itens_devolucao.geometry("1000x600")
-        # Criando um widget do tipo treeview para mostrar essas devolucoes no toplevel
+        tp_itens_devolucao.geometry("1000x450")
         
-        treeview = Treeview(tp_itens_devolucao ,columns=("linha", "codigo_produto", "lote", 'quantidade', 'nome_produto'), show="headings")
-        treeview.pack(ipady=170)
-
+        frame_botoes = Frame(tp_itens_devolucao)
+        frame_botoes.place(x=10, y=10)
+        
+        frame_tv = Frame(tp_itens_devolucao)
+        frame_tv.place(x=300, y=10)
+        
+        # Criando um widget do tipo treeview para mostrar essas devolucoes no toplevel
+        treeview = Treeview(frame_tv ,columns=("linha", "codigo_produto", "lote", 'quantidade', 'nome_produto'), show="headings")
+        treeview.pack()
         # Adicionando os cabecalhos do treeview
         treeview.heading("linha", text="Linha", anchor='w')
         treeview.heading("codigo_produto", text="Cod. Produto", anchor='w')
@@ -58,13 +65,13 @@ def mostrar_dados_planilha():
             treeview.tag_configure("lightgrey", background=cor_fundo)
             # print(cor_fundo)
             # cor_fundo = "white" if len(tree.get_children()) % 2 == 0 else "lightgrey"
-            
-
-
-def inserir_codigo():
-    nav.inserir_codigo(prod.array_cod_prod)
-    atualizar_contador()
-
+        Button(frame_botoes, text='Abrir Planilha de Devolução', foreground="#FFFFFF", background='#006633', font=('Arial', 15), command=abrir_planilha).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Carregar Navegador', foreground="#FFFFFF", background='#A57A0F', font=('Arial', 15), command=carregar_navegador).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Inserir Código', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=inserir_codigo).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Fazer Devolução', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=fazer_devolucao).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Mostrar quantidades', font=('Arial', 15), command=mostrarQuantidades).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Mostrar dados planilha', font=('Arial', 15), command=mostrar_dados_planilha).pack(padx=8, pady=8, anchor='e',fill='both')
+        Button(frame_botoes, text='Sair', foreground="#FFFFFF", background='#8B0000', font=('Arial', 15, ), command=sair).pack(padx=8, pady=8, anchor='e',fill='both')
 
 def sair():
     window.destroy()
@@ -87,9 +94,10 @@ def alterar_linha():
     nav.alter_contador(int(nova_linha)-2)
     atualizar_contador()
 
-
 def atualizar_contador():
     label_info.config(text="Linha: "+str(int(nav.get_contador()+2)))
+
+
 
 
 window = Tk()
@@ -119,7 +127,6 @@ Button(window, text='Abrir Planilha de Devolução', foreground="#FFFFFF", backg
 Button(window, text='Carregar Navegador', foreground="#FFFFFF", background='#A57A0F', font=('Arial', 15), command=carregar_navegador).pack(padx=8, pady=8, fill=BOTH)
 Button(window, text='Inserir Código', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=inserir_codigo).pack(padx=8, pady=8, fill=BOTH)
 Button(window, text='Fazer Devolução', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=fazer_devolucao).pack(padx=8, pady=8, fill=BOTH)
-Button(window, text='Mostrar quantidades', font=('Arial', 15), command=mostrarQuantidades).pack(padx=8, pady=8, fill=BOTH, )
 Button(window, text='Mostrar dados planilha', font=('Arial', 15), command=mostrar_dados_planilha).pack(padx=8, pady=8, fill=BOTH, )
 Button(window, text='Sair', foreground="#FFFFFF", background='#8B0000', font=('Arial', 15, ), command=sair).pack(padx=8, pady=8, fill=BOTH, )
 
