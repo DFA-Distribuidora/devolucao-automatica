@@ -3,6 +3,7 @@ from openpyxl import *
 from openpyxl.utils import get_column_letter
 from openpyxl.styles import Font
 from tkinter import filedialog as fd
+import icecream as ic
 
 
 class Produtos:
@@ -16,15 +17,25 @@ class Produtos:
         self.array_lote = []
         
     def set_planilha(self):
-        arquivo = fd.askopenfilename(
-            initialdir='C:\\Users\\Win\\Desktop\\devolucao_automatic\\',
-            title="Escolha a planilha de devolução",
-            filetypes=(('Planilha do Excel', '*.xlsx'), ("all files", '*.*'))
-        )
-        if arquivo is not None and arquivo != '':
-            self.wb = load_workbook(arquivo)
-            self.ws = self.wb.active
-        return arquivo
+        try:
+            arquivo = fd.askopenfilename(
+                initialdir='C:\\Users\\Win\\Desktop\\devolucao_automatic\\',
+                title="Escolha a planilha de devolução",
+                filetypes=(('Planilha do Excel', '*.xlsx'), ("all files", '*.*'))
+            )
+            print("Variavel arquivo: ",arquivo)
+            return arquivo;
+        except Exception as e:
+            print("Erro: ",e)
+
+        finally:
+            try:
+                if arquivo is not None and arquivo != '':
+                    self.wb = load_workbook(arquivo)
+                    self.ws = self.wb.active
+                return arquivo
+            except Exception as e:
+                print("Erro: ",e)
     
     def set_codigos_produtos(self):
         #guardar o array de codigos de produtos
@@ -60,6 +71,7 @@ class Produtos:
             
     def set_tudo(self):
         arquivo = self.set_planilha()
+        print("Variavel arquivo no metodo def set_tudo: ",arquivo)
         if arquivo is not None and arquivo != '':
             self.set_tam_dev()
             self.set_codigos_produtos()
