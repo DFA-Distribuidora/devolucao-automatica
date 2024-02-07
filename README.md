@@ -1,4 +1,4 @@
-<h3>Sistema automático de devolução de produtos usando planilhas usado no Broker DFA.</h3><br>
+<h3>Sistema automático de devolução de produtos usando planilha by Manoel Ribeiro - Broker DFA.</h3><br>
 Este sistema foi desenvolvido para auxiliar na devolução de produtos de empresas que usam o <strong>WMS Control</strong> da Empresa LinkedBy.
 <hr>
 Tutorial de como baixar este programa, independente do seu sistema operacional:
