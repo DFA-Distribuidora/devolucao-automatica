@@ -30,7 +30,10 @@ Tutorial de como baixar este programa, independente do seu sistema operacional:
   <li>Em seguida clique na opção <strong>abrir terminal aqui</strong></li>
   <li>Digite no terminal que abriu o seguinte: <strong>python3 app4_tela.py</strong></li>
 </ol>
-<p>Atenção! No item 5 o nome da opção no linux pode ser diferente dependendo do seu sistema operacional (distribuição linux)</p>
+<b>Atenção!</b>
+<ul>
+  <li>No item 5 o nome da opção no linux pode ser diferente dependendo do seu sistema operacional (distribuição linux)</li>
+</ul>
 <hr>
 <h1>Como Usar: </h1>
 <p>Antes de usá-lo entenda que:</p>
