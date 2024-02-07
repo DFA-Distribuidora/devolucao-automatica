@@ -74,7 +74,6 @@ def mostrar_dados_planilha():
         Button(frame_botoes, text='Carregar Navegador', foreground="#FFFFFF", background='#A57A0F', font=('Arial', 15), command=carregar_navegador).pack(padx=8, pady=8, anchor='e',fill='both')
         Button(frame_botoes, text='Inserir Código', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=inserir_codigo).pack(padx=8, pady=8, anchor='e',fill='both')
         Button(frame_botoes, text='Fazer Devolução', foreground="#FFFFFF", background='#0D214F', font=('Arial', 15), command=fazer_devolucao).pack(padx=8, pady=8, anchor='e',fill='both')
-        Button(frame_botoes, text='Mostrar quantidades', font=('Arial', 15), command=mostrarQuantidades).pack(padx=8, pady=8, anchor='e',fill='both')
         Button(frame_botoes, text='Mostrar dados planilha', font=('Arial', 15), command=mostrar_dados_planilha).pack(padx=8, pady=8, anchor='e',fill='both')
         Button(frame_botoes, text='Sair', foreground="#FFFFFF", background='#8B0000', font=('Arial', 15, ), command=sair).pack(padx=8, pady=8, anchor='e',fill='both')
 
